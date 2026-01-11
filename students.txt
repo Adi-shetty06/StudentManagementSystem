@@ -1,9 +1,0 @@
-1 | Adithya | 21 | 89.5
-2 | Rohit | 22 | 76.0
-3 | Meera | 20 | 92.3
-1 | Adithya | 21 | 89.5
-2 | Rohit | 22 | 76.0
-3 | Meera | 20 | 92.3
-1 | Adithya | 21 | 89.5
-2 | Rohit | 22 | 76.0
-3 | Meera | 20 | 92.3

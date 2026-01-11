@@ -6,13 +6,13 @@ import java.util.List;
 
 public class FileUtil {
 
-    public static void saveToFile(String fileName, List<String> data) {
+    public static void writeToFile(String fileName, List<String> data) {
         try (FileWriter fw = new FileWriter(fileName, true)) {
             for (String line : data) {
-                fw.write(line + "\n");
+                fw.write(line + System.lineSeparator());
             }
         } catch (IOException e) {
-            System.out.println("Error saving file: " + e.getMessage());
+            System.out.println("File write error: " + e.getMessage());
         }
     }
 }

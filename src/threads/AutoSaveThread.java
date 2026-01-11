@@ -8,19 +8,22 @@ import java.util.List;
 
 public class AutoSaveThread extends Thread {
 
-    private StudentService service;
+    private final StudentService service;
 
     public AutoSaveThread(StudentService service) {
         this.service = service;
+        setDaemon(true);
     }
 
     @Override
     public void run() {
         while (true) {
             try {
-                List<Student> list = service.getAllStudents();
-                FileUtil.saveToFile("students.txt",
-                        list.stream().map(Student::toString).toList()
+                FileUtil.writeToFile("students.txt",
+                        service.getAllStudents()
+                                .stream()
+                                .map(Student::toString)
+                                .toList()
                 );
 
                 System.out.println("[AutoSave] Students saved!");

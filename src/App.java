@@ -11,8 +11,8 @@ public class App {
         StudentService service = new StudentServiceImpl();
 
         // Starting background thread
-        AutoSaveThread t = new AutoSaveThread(service);
-        t.start();
+        AutoSaveThread autoSave  = new AutoSaveThread(service);
+        autoSave.start();
 
         // Adding students
         service.addStudent(new Student(1, "Adithya", 21, 89.5));
@@ -35,6 +35,6 @@ public class App {
             Thread.sleep(12000); // allow autosave to run twice
         } catch (InterruptedException ignored) {}
 
-        t.interrupt();
+        autoSave.interrupt();
     }
 }
